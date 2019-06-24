@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/daterangepicker.min.css" type="text/css"/>
+  <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+  <link rel="stylesheet" href="css/bootstrap-4.1.3.css">
+  <link rel="stylesheet" href="css/phototheme.css" type="text/css">
+  <link rel="stylesheet" href="css/jquery.fancybox.min.css" type="text/css">
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <script src="js/jquery.jrumble.1.3.min.js"></script>
+  <script src="js/jquery.blockUI.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>  
+  <script src="js/cmscore.js"></script>  
+  <script src="js/moment.js"></script>    
+  <script src="js/jquery.daterangepicker.min.js"></script> 
+  <script src="js/jquery.fancybox.min.js"></script>
+    <script>
+        fetch("/main", {
+            method: "POST",
+            credentials: "same-origin",
+            headers: {
+                "Content-type": "application/json; charset=UTF-8",
+            },
+            body: JSON.stringify({
+                'crm': 'Lorem'
+            })
+        }).then(r => {
+            return r.text()
+        }).then(r => {
+            if (r === 'no_session'){
+                alert('no_session detected!');
+            }
+            else if (r === 'have_session') {
+              alert('have_session not detected!');
+            }
+        })
+    </script>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="">
+    <div class="container"> <a class="navbar-brand" href="#">
+        <img src="images/rt_logo.png" width="40" height="58" class="d-inline-block align-top float-left" alt=""><b class="">Ростелеком Урал&nbsp;<br>фотоотчёт</b>
+      </a> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar11">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar11">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item"> <a class="nav-link" href="#" id="getphotoreport">Мой фотоотчёт</a> </li>
+          <li class="nav-item"> <a class="nav-link" href="#" id="getmaterials">Материалы</a> </li>
+          <li class="nav-item" id="navFavorites"> <a class="nav-link" href="#" id="favoritesbtn">Избранное</a> </li>
+          <li class="nav-item" id="navSettings"> <a class="nav-link" href="#" id="settingsbtn">Настройки</a> </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"> <a class="nav-link" href="#" id="navUserName"></li>      
+        </ul> <a class="btn btn-primary navbar-btn ml-md-2" id="logoutbtn">Выйти<br></a>
+      </div>
+    </div>
+  </nav>
+  <div id="maincontainer">
+  </div>
+  <div id="getPhotoReportG">
+  </div>
+  <div class="py-3">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p class="mb-0" style="absolute:fixed;bottom: 5px;">По вопросам работы ресурса обращаться на<a href="mailto:panov-va@ural.rt.ru;khuchashev-ev@ural.rt.ru;zenova-dk@ural.rt.ru?subject=Вопрос по контролю фотоотчёта инсталляций"> КДГ ХМФ</a>© 2019.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="materialdiag" style="display:none; cursor: default" class="py-4 mx-2"> 
+        <h5>Выберите период:</h5> 
+		<input type="text" style="width:100%;padding: 5px;text-align: center;" id="date-range1"  class="form-control">
+		<p class="py-2">
+			<input type="button" id="scvmaterialsbtn" onclick="getMaterials($('#date-range1').val());" value="Выгрузить" /> 
+			<input type="button" id="cancelcsvmaterialsbtn" value="Отмена" onclick="$.unblockUI();" /> 
+		</p>
+</div>
+</body>
+</html>
