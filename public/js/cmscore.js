@@ -112,7 +112,7 @@ function showPhoto(task,index){
 		
 	</div> 
 		`;	
-	$('#getPhotoReportG').html(photoBody);
+	$('#maincontainer').html(photoBody);
 	$('#unfavoritebtn').hide();
 	blockuiload();
 	$.post("/main", {act:'getfavorites'},function(data){
@@ -283,7 +283,9 @@ function acceptTask(taskname){
 			}
 			data=JSON.parse(data);
 			if(data.status==='success'){
-				getPhotoReport();
+                $('#maincontainer').hide();
+                $('#getPhotoReportG').show();
+				// getPhotoReport();
 				blockuimessage('Подтверждено');
 			}else{
 				$("#photoreporttableinfo").html(data.body);
@@ -751,7 +753,7 @@ function updateTaskDiag(task){
 				
 							  <div class="btn-group dropright">
 								<a class="btn btn-primary" href="#" onclick="claimTask();">Отправить</a>
-							  </div><a class="btn btn-primary mx-1" href="#" onclick="getPhotoReport();">Отмена</a>
+							  </div><a class="btn btn-primary mx-1" href="#" onclick="$('#maincontainer').hide();$('#getPhotoReportG').show();">Отмена</a>
 							</div>
 						  </div>
 						</div>
@@ -833,6 +835,7 @@ function editUser(login){
 		}
 			data=JSON.parse(data);
 			if(data.status==='success'){
+                $('#getPhotoReportG').hide();
 				data.body=JSON.parse(data.body)
 				let showUserBody=
 					`
