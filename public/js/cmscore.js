@@ -15,7 +15,7 @@ $( document ).ready(function() {
 		$('#navFavorites').hide();
 	};
 	curdate=moment().format('DD.MM.YYYY');
-	period=curdate+' - '+curdate;
+	period='1.10.18 - 1.10.18';
 	if($('#logoutbtn').length){
 		getPhotoReport();
 	};
@@ -112,7 +112,7 @@ function showPhoto(task,index){
 		
 	</div> 
 		`;	
-	$('#maincontainer').html(photoBody);
+	$('#getPhotoReportG').html(photoBody);
 	$('#unfavoritebtn').hide();
 	blockuiload();
 	$.post("/main", {act:'getfavorites'},function(data){
