@@ -119,6 +119,7 @@ function showPhoto(task,index){
 		if(data==="no_session"){
 			location.reload();
 		}
+
 		data=JSON.parse(data);
 		if(data.status==='success'){
 			if(data.body.includes(task.taskname)){
@@ -341,6 +342,8 @@ function claimTask(){
 };
 
 function getPhotoReport(_taskname,favor){
+    let getST = document.documentElement.scrollTop;
+    let gebiCC = document.getElementById("currentCoordinates");
 	blockuiload();
 	let status=[];
 	if(localStorage.getItem('Новый')){
@@ -529,7 +532,7 @@ function getPhotoReport(_taskname,favor){
 					tablebody+=`
 						<td>
 							<div class="btn-group dropleft" style="">
-								<button class="btn btn-primary mx-1" onclick="showPhoto(tasks[`+i+`],`+i+`);"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>											
+								<button class="btn btn-primary mx-1" onclick="showPhoto(tasks[`+i+`],`+i+`,gebiST)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>											
 								</button>
 							</div>
 						</td>
