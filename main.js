@@ -7,8 +7,8 @@ const fs = require('fs');
 const moment = require('moment');
 const nodemailer = require('nodemailer');
 const uuid = require('node-uuid');
-//const Iconv = require("iconv").Iconv;
-//const iconv = new Iconv('utf8', 'utf16le');
+const Iconv = require("iconv").Iconv;
+const iconv = new Iconv('utf8', 'utf16le');
 const oracledb = require('oracledb');
 const argusconnect = require('./argusstb_connect');
 
