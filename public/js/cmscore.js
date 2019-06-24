@@ -24,6 +24,8 @@ $( document ).ready(function() {
 });
 
 function showPhoto(task,index){
+	$('#getPhotoReportG').hide();
+	$('#maincontainer').show();
 	let photoBody=
 		`
     <style>
@@ -72,7 +74,7 @@ function showPhoto(task,index){
 				if(userRole>2){
 					photoBody+=`<a class="btn btn-primary mx-1" href="#" onclick="fixTask('`+task.taskname+`')"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Исправлено</a>`;
 				};
-				photoBody+=`<a class="btn btn-primary mx-1" href="#" onclick="getPhotoReport();"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Закрыть</a>`;
+				photoBody+=`<a class="btn btn-primary mx-1" href="#" onclick="$('#maincontainer').hide();$('#getPhotoReportG').show();"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Закрыть</a>`;
 				photoBody+=`</p>
 			</div>
 		</div>	
@@ -303,7 +305,8 @@ function fixTask(taskname){
 			data=JSON.parse(data);
 			if(data.status==='success'){
 				blockuimessage('Отправлено на рассмотрение');
-				getPhotoReport();
+				$('#getPhotoReportG').show();
+				$('#maincontainer').hide();
 			}else{
 				$("#photoreporttableinfo").html(data.body);
 				jrumbleitem($("#photoreporttableinfo"));
@@ -322,7 +325,8 @@ function claimTask(){
 		}
 			data=JSON.parse(data);
 			if(data.status==='success'){
-				getPhotoReport();
+				$('#getPhotoReportG').show();
+				$('#maincontainer').hide();
 				blockuimessage('Претензия успешно отправлена');
 			}else{
 				$("#photoreporttableinfo").html(data.body);
@@ -337,7 +341,7 @@ function claimTask(){
 function getPhotoReport(_taskname,favor){
 	blockuiload();
 	let status=[];
-	if(localStorage.getItem('Новый') && userRole>2){
+	if(localStorage.getItem('Новый')){
 		if(localStorage.getItem('Новый')==='true')
 			status.push('Новый');
 	}else{
@@ -349,13 +353,13 @@ function getPhotoReport(_taskname,favor){
 	}else{
 		status.push('Претензия');
 	};
-	if(localStorage.getItem('Подтверждён') && userRole>2){
+	if(localStorage.getItem('Подтверждён')){
 		if(localStorage.getItem('Подтверждён')==='true')
 			status.push('Подтверждён');
 	}else{
 		status.push('Подтверждён');
 	};
-	if(localStorage.getItem('Доработано') && userRole>2){
+	if(localStorage.getItem('Доработано')){
 		if(localStorage.getItem('Доработано')==='true')
 			status.push('Доработан');
 	}else{
