@@ -24,7 +24,6 @@ $( document ).ready(function() {
 });
 
 function showPhoto(task,index,lorem){
-	alert(lorem);
 	$('#getPhotoReportG').hide();
 	$('#maincontainer').show();
 	let photoBody=
@@ -75,7 +74,7 @@ function showPhoto(task,index,lorem){
 				if(userRole>2){
 					photoBody+=`<a class="btn btn-primary mx-1" href="#" onclick="fixTask('`+task.taskname+`')"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Исправлено</a>`;
 				};
-				photoBody+=`<a class="btn btn-primary mx-1" href="#" onclick="$('#maincontainer').hide();$('#getPhotoReportG').show();window.scrollTo(0, lorem);alert (lorem);"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Закрыть</a>`;
+				photoBody+=`<a class="btn btn-primary mx-1" href="#" onclick="$('#maincontainer').hide();$('#getPhotoReportG').show();window.scrollTo(0, ${lorem});"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Закрыть</a>`;
 				photoBody+=`</p>
 			</div>
 		</div>	
@@ -343,8 +342,6 @@ function claimTask(){
 };
 
 function getPhotoReport(_taskname,favor){
-    let getST = document.documentElement.scrollTop;
-    let gebiCC = document.getElementById("currentCoordinates");
 	blockuiload();
 	let status=[];
 	if(localStorage.getItem('Новый')){
