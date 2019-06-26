@@ -23,7 +23,8 @@ $( document ).ready(function() {
 	$('#date-range1').val(moment().startOf('month').format('DD.MM.YYYY')+'-'+moment().format('DD.MM.YYYY'));
 });
 
-function showPhoto(task,index){
+function showPhoto(task,index,lorem){
+	alert(lorem);
 	$('#getPhotoReportG').hide();
 	$('#maincontainer').show();
 	let photoBody=
@@ -74,7 +75,7 @@ function showPhoto(task,index){
 				if(userRole>2){
 					photoBody+=`<a class="btn btn-primary mx-1" href="#" onclick="fixTask('`+task.taskname+`')"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Исправлено</a>`;
 				};
-				photoBody+=`<a class="btn btn-primary mx-1" href="#" onclick="$('#maincontainer').hide();$('#getPhotoReportG').show();"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Закрыть</a>`;
+				photoBody+=`<a class="btn btn-primary mx-1" href="#" onclick="$('#maincontainer').hide();$('#getPhotoReportG').show();window.scrollTo(0, lorem);alert (lorem);"><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Закрыть</a>`;
 				photoBody+=`</p>
 			</div>
 		</div>	
@@ -532,7 +533,7 @@ function getPhotoReport(_taskname,favor){
 					tablebody+=`
 						<td>
 							<div class="btn-group dropleft" style="">
-								<button class="btn btn-primary mx-1" onclick="showPhoto(tasks[`+i+`],`+i+`,gebiST)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>											
+								<button class="btn btn-primary mx-1" onclick="showPhoto(tasks[`+i+`],`+i+`,document.documentElement.scrollTop)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>											
 								</button>
 							</div>
 						</td>

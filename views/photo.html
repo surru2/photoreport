@@ -40,7 +40,6 @@
     </script>
 </head>
 <body>
-<div id="currentCoordinates" style="position: fixed; background-color: #FFF; z-index: 999; padding: 16px;">Координаты:</div>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="">
     <div class="container"> <a class="navbar-brand" href="#">
         <img src="images/rt_logo.png" width="40" height="58" class="d-inline-block align-top float-left" alt=""><b class="">Ростелеком Урал&nbsp;<br>фотоотчёт</b>
@@ -79,13 +78,5 @@
 			<input type="button" id="cancelcsvmaterialsbtn" value="Отмена" onclick="$.unblockUI();" /> 
 		</p>
 </div>
-<script>
-  function showCC () {
-    let gebiCC = document.getElementById("currentCoordinates");
-    let gebiST = document.documentElement.scrollTop;
-    gebiCC.innerText = "Координаты: " + gebiST;
-  }
-  setInterval(showCC, 500);
-</script>
 </body>
 </html>
