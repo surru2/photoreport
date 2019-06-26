@@ -533,7 +533,7 @@ function getPhotoReport(_taskname,favor){
 					tablebody+=`
 						<td>
 							<div class="btn-group dropleft" style="">
-								<button class="btn btn-primary mx-1" onclick="showPhoto(tasks[`+i+`],`+i+`,document.documentElement.scrollTop)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>											
+								<button class="btn btn-primary mx-1" onclick="showPhoto(tasks[`+i+`],`+i+`,documentElement.scrollTop)"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>											
 								</button>
 							</div>
 						</td>
