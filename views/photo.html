@@ -31,10 +31,12 @@
             return r.text()
         }).then(r => {
             if (r === 'no_session'){
-                alert('no_session detected!');
+                alert('Время сессии истекло!');
+                location.reload();
             }
             else if (r === 'have_session') {
-              alert('have_session not detected!');
+              alert('Время сессии истекло!');
+              location.reload();
             }
         })
     </script>
