@@ -1,7 +1,7 @@
 {
   "name": "photoreport",
   "version": "1.0.0",
-  "main": "photo.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,12 +12,11 @@
     "express": "^4.16.4",
     "express-fileupload": "^1.1.1-alpha.1",
     "express-session": "^1.15.6",
-    "iconv": "^2.3.4",
     "moment": "^2.23.0",
     "mongodb": "^2.0.55",
     "node-uuid": "^1.4.8",
     "nodemailer": "^4.7.0",
-    "oracledb": "^3.1.2",
+	"iconv": "^2.3.4",
     "request": "^2.88.0"
   },
   "description": ""

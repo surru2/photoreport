@@ -19,7 +19,6 @@ let transporter = nodemailer.createTransport({
 });
 
 function sendmail(mailOptions) {
-    return;
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
             return console.log(error);
@@ -47,6 +46,7 @@ var logout = function (req, res) {
         }
     });
 };
+
 var login = function (req, res) {
     client.connect(dburl, function (err, client) {
         const db = client.db(dbName);
@@ -344,7 +344,6 @@ var getphotoreport = function (req, res) {
     var dates = req.body.period.split("-");
     var query;
     var status = req.body.status;
-    console.log(status);
     if (req.session.role === 3) {
         status.splice(status.indexOf('Новый'), 1);
         status.splice(status.indexOf('Подтверждён'), 1);
@@ -503,7 +502,8 @@ var claimtask = function (req, res) {
                         chiefname : req.body.chiefname,
                         chieflogin : req.body.chieflogin,
                         claimtext : req.body.claimtext,
-                        claimedname : req.session.login
+                        claimedname : req.session.login,
+                        claimdate : new Date()
                     }
                 }, function (err, r) {
                     if (err) {

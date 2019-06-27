@@ -13,7 +13,6 @@ var express = require('express');
 var moment = require('moment');
 var session = require('express-session');
 var bodyParser = require('body-parser');
-const fileUpload = require('express-fileupload');
 var app = express();
 var fs = require("fs");
 var MongoClient = require('mongodb').MongoClient;
@@ -25,7 +24,6 @@ app.use(session({secret: 'QdtVr56zP',resave: true,saveUninitialized: true}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static('public'));
-app.use(fileUpload());
 
 app.use(function(req, res, next) {
 	next();		
