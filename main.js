@@ -349,7 +349,6 @@ var getphotoreport = function (req, res) {
         status.splice(status.indexOf('Подтверждён'), 1);
         status.splice(status.indexOf('Доработан'), 1);
     };
-    console.log(status);
     if (req.session.role === 0) {
         query = {
             date : {
