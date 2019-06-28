@@ -75,7 +75,7 @@ function showPhoto(task, index, anchor) {
         photoBody += `<a class="btn btn-primary mx-1" href="#" onclick="unfavoriteTask('` + task.taskname + `');" id="unfavoritebtn" title="Убрать из избранного"><i class="fa fa-star" aria-hidden="true"></i></a>`;
     }
     ;
-    if (userRole === 3) {
+    if (userRole > 2) {
         photoBody += `<a class="btn btn-primary mx-1" href="#" onclick="fixTask('` + task.taskname + `','` + anchor + `')"><i class="fa fa-check" aria-hidden="true"></i>&nbsp;Исправлено</a>`;
     }
     ;
