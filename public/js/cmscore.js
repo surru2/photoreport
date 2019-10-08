@@ -58,7 +58,7 @@ function showPhoto(task, index, anchor) {
 		<div class="card py-2">
 		<span style="color:red" id="photoerrorinfo"></span>
 			<div class="card-body">		
-				<h5 class="card-title"><a href="http://argusweb.ur.rt.ru:8080/argus/views/wfm/wfmorder/WfmOrderView.xhtml` + task.href + `" target="_blank" id="claimtaskname">` + task.taskname + `</a>&nbsp<a href="https://argus.ural.rt.ru/views/wfm/mobilemounter/order/OrderMobileView.xhtml` + task.href + `" target="_blank">(argus.ural.rt.ru)</a></h5>
+				<h5 class="card-title"><a href="http://argusweb.ur.rt.ru:8080/argus/views/wfm/wfmorder/WfmOrderView.xhtml` + task.href + `" target="_blank" id="claimtaskname">` + task.taskname + `</a>&nbsp<a href="https://212.96.193.170/views/wfm/mobilemounter/order/OrderMobileView.xhtml` + task.href + `" target="_blank">(argus.ural.rt.ru)</a></h5>
 				<h6 class="card-subtitle my-2 text-muted">` + task.city + `, ` + task.address + `</h6>		
 				<p class="card-text">Участок: ` + task.worksite;
     if (task.workeremail != 'null') {
