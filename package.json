@@ -15,7 +15,7 @@
     "moment": "^2.23.0",
     "mongodb": "^2.0.55",
     "node-uuid": "^1.4.8",
-    "nodemailer": "^4.7.0",
+    "nodemailer": "^6.4.16",
 	"iconv": "^2.3.4",
     "oracledb": "^3.1.2",
     "request": "^2.88.0"
