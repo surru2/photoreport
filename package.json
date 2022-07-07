@@ -12,7 +12,7 @@
     "express": "^4.16.4",
     "express-fileupload": "^1.1.1-alpha.1",
     "express-session": "^1.15.6",
-    "moment": "^2.23.0",
+    "moment": "^2.29.4",
     "mongodb": "^2.0.55",
     "node-uuid": "^1.4.8",
     "nodemailer": "^4.7.0",
