@@ -9,7 +9,7 @@
   "license": "ISC",
   "dependencies": {
     "ejs": "^2.6.1",
-    "express": "^4.16.4",
+    "express": "^4.17.3",
     "express-fileupload": "^1.1.1-alpha.1",
     "express-session": "^1.15.6",
     "moment": "^2.23.0",
